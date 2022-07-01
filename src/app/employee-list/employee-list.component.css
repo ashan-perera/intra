@@ -1,0 +1,37 @@
+.joinnow {
+    background-color: #435f7f;
+    padding: 50px 50px;
+}
+
+.login {
+    background-color: #ffffff;
+    padding: 20px 30px;
+}
+
+@media screen and (max-width:600px) {
+
+    .joinnow {
+        padding: 140px 30px;
+    }
+}
+
+.mat-table {
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+.mat-header-cell {
+    text-align: center;
+}
+
+.mat-cell {
+    text-align: center;
+    max-width: 300px;
+}
+
+.mat-paginator {
+    margin-top: 5%;
+    margin-right: 10%;
+}
