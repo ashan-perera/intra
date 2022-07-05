@@ -12,10 +12,10 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  course = [
+  usefulLinks = [
     {'id':1,'name':'CICL','description':'Navigate to CICL System','image':'../../assets/cicl.jpg'},
+    {'id':3,'name':'CICL Life','description':'Navigate to CICL Life System','image':'../../assets/ciclLife.jpg'},
     {'id':2,'name':'IRCSL','description':'Navigate to IRCSL','image':'../../assets/ircsl.jpg'},
-    {'id':3,'name':'Learn Nodejs','description':'Lorem Ipsum is simply dummy text of the printing and typesetting industry','image':'../../assets/nodejs.jpg'},
     {'id':4,'name':'Learn Reactjs','description':'Lorem Ipsum is simply dummy text of the printing and typesetting industry','image':'../../assets/reactjs.jpg'}
   ]
 }

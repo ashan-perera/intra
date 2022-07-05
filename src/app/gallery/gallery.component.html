@@ -1,1 +1,17 @@
-<p>gallery works!</p>
+<div class="gallery-lightbox-container">
+    <div class="gallery">
+        <div *ngFor="let data of galleryData; let i=index" class="gallery-img">
+            <img (click)="onPrevireImage(i)" [src]="data.imageSrc" [alt]="data.imageAlt">
+        </div>
+    </div>
+    <div class="lightbox">
+        <span class="count"></span>
+        <button class="close-btn"></button>
+        <button class="btn-lightbox-carousel btn-prev">
+
+        </button>
+        <button class="btn-lightbox-carousel btn-next">
+            
+        </button>
+    </div>
+</div>

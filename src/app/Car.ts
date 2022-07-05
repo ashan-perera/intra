@@ -1,0 +1,4 @@
+interface Car {
+    id
+    name
+}
