@@ -6,7 +6,7 @@
         <div class="box shadow-sm">
           <img src="{{ usefulLink.image }}" width="100%">
           <h4 class="mt-2">{{ usefulLink.name }}</h4>
-          <a [href]="'http://172.20.10.10:8080/CoopLife/'" class="mt-2">Navigate to CICL Life System</a>
+          <a [href]= usefulLink.url target = "_blank" class="mt-2">Navigate to CICL Life System</a>
         </div>
       </div>
     </div>

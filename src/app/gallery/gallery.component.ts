@@ -13,18 +13,18 @@ interface Item {
   animations: [
     trigger('animation', [
       transition('void => visible', [
-        style({transform: 'scale(0.5)'}),
-        animate('150ms', style({transform: 'scale(1)'}))
+        style({ transform: 'scale(0.5)' }),
+        animate('150ms', style({ transform: 'scale(1)' }))
       ]),
       transition('visible => void', [
-        style({transform: 'scale(1)'}),
-        animate('150ms', style({transform: 'scale(0.5)'}))
+        style({ transform: 'scale(1)' }),
+        animate('150ms', style({ transform: 'scale(0.5)' }))
       ]),
     ]),
     trigger('animation2', [
       transition(':leave', [
-        style({opacity: 1}),
-        animate('500ms', style({opacity: 0.8}))
+        style({ opacity: 1 }),
+        animate('50ms', style({ opacity: 0.8 }))
       ])
     ])
   ]
@@ -32,6 +32,7 @@ interface Item {
 export class GalleryComponent implements OnInit {
 
   galleryData = [
+
     {
       imageSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
       imageAlt: '1'
@@ -109,7 +110,7 @@ export class GalleryComponent implements OnInit {
   }
 
   onAnimationEnd(event: AnimationEvent) {
-    if(event.toState === 'void') {
+    if (event.toState === 'void') {
       this.showMask = false;
     }
   }
@@ -120,7 +121,7 @@ export class GalleryComponent implements OnInit {
 
   next(): void {
     this.currentIndex = this.currentIndex + 1;
-    if(this.currentIndex > this.galleryData.length - 1) {
+    if (this.currentIndex > this.galleryData.length - 1) {
       this.currentIndex = 0;
     }
     this.currentLightboxImage = this.galleryData[this.currentIndex];
@@ -128,7 +129,7 @@ export class GalleryComponent implements OnInit {
 
   prev(): void {
     this.currentIndex = this.currentIndex - 1;
-    if(this.currentIndex < 0) {
+    if (this.currentIndex < 0) {
       this.currentIndex = this.galleryData.length - 1;
     }
     this.currentLightboxImage = this.galleryData[this.currentIndex];

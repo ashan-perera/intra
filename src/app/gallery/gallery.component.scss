@@ -117,3 +117,39 @@
         }
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .gallery-lightbox-container {
+        .gallery {
+            column-count: 2;
+
+            .gallery-img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .gallery-lightbox-container {
+        .gallery {
+            column-count: 2;
+
+            .gallery-img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .gallery-lightbox-container {
+        .gallery {
+            column-count: 1;
+
+            .gallery-img {
+                width: 100%;
+            }
+        }
+    }
+}
