@@ -19,6 +19,23 @@
         Employees
       </mat-card-title>
     </mat-card-header>
+    <form>
+      <mat-form-field class = "col-md-3 col-sm-6 col-4">
+        <mat-label>First Name</mat-label>
+        <input matInput  >
+      </mat-form-field>
+      <mat-form-field class = "col-md-3 col-sm-6 col-4">
+        <mat-label>Last Name</mat-label>
+        <input matInput >
+      </mat-form-field>
+      <mat-form-field class = "col-md-3 col-sm-6 col-4">
+        <mat-label>Epf</mat-label>
+        <input matInput >
+      </mat-form-field>
+      <button mat-button color = "primary" class = "col-md-3 col-sm-6 col-4" (click)="onSerachClick()">
+        <mat-icon>search</mat-icon> Search
+    </button>
+    </form>
     <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="imageUrl">
         <th mat-header-cell *matHeaderCellDef></th>

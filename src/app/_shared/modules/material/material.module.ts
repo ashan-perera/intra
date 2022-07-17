@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 
 const modules: any[] = [
     CommonModule,
@@ -16,7 +17,8 @@ const modules: any[] = [
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule
 ];
 
 @NgModule({
