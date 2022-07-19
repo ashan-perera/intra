@@ -1,8 +1,15 @@
+.home {
+    padding: 3%;
+    margin-right: 40%;
+    
+}
+
 .home img {
     width: 100%;
-    height: 600px;
+    height: 500px;
     object-position: center;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .homecontent {
