@@ -1,6 +1,6 @@
 .home {
     padding: 3%;
-    margin-right: 40%;
+    /* margin-right: 40%; */
     
 }
 
@@ -41,4 +41,22 @@
     .homecontent h1 {
         font-size: 40px;
     }
+}
+
+.course {
+    /* background-color: #435f7f; */
+    padding: 30px 10px;
+    border-color: #435f7f;
+}
+
+.box {
+    margin-top: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.course img {
+    border-radius: 5px;
+    height: 140px;
 }
