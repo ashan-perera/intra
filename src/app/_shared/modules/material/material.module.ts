@@ -8,6 +8,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatSelectModule } from "@angular/material/select";
 
 const modules: any[] = [
     CommonModule,
@@ -18,7 +19,8 @@ const modules: any[] = [
     MatPaginatorModule,
     MatIconModule,
     MatListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSelectModule
 ];
 
 @NgModule({

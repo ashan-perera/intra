@@ -1,8 +1,11 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs';
 import { BackendService } from '../api/backend.service';
+import { EmployeeService } from '../api/employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,22 +16,31 @@ export class EmployeeListComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
+  dpt;
+  empid;
+  name;
+  NIC;
+  departments;
+
   employees: Observable<any>;
   displayedColumns: string[] = [
     'imageUrl',
     'firstName',
-    'email',
-    'contactNumber',
-    'age',
-    'dob',
-    'address'
+    'department',
+    'designation',
+    'telephoneNumber',
+    'location'
   ];
   dataSource: MatTableDataSource<any>;
 
-  constructor(private backendService: BackendService) { }
+  constructor(
+    private backendService: BackendService,
+    private employeeService: EmployeeService,
+    private _spinner: NgxSpinnerService
+    ) { }
 
   ngOnInit(): void {
-    this.getAllEmployees();
+    this.listAllDepartments();
   }
 
   getAllEmployees() {
@@ -39,7 +51,57 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  onSerachClick() {
+  listAllDepartments() {
+    this.employeeService.listAllDepartments().subscribe((data: any) => {
+      this.departments = data;
+    });
+  }
+
+  onSearchClick(): void {
+
+    let params = new HttpParams()
+
+    if (this.dpt) {
+      params = params.set('dpt', this.dpt)
+    } else {
+      params = params.set('dpt', '1')
+    }
+
+    if (this.empid) {
+      params = params.set('empid', this.empid)
+    } else {
+      params = params.set('empid', '1')
+    }
+
+    if (this.name) {
+      params = params.set('name', this.name)
+    } else {
+      params = params.set('name', '1')
+    }
+
+    if (this.NIC) {
+      params = params.set('NIC', this.NIC)
+    } else {
+      params = params.set('NIC', '1')
+    }
+
+
+    this.employeeService.searchEmployees(params).subscribe((data: any) => {
+      this._spinner.show();
+      // if(data.object.length == 0) {
+      //   this.displayNoRecords = true;
+      // } else {
+      //   this.displayNoRecords = false;
+      // }
+      
+      this.dataSource = new MatTableDataSource(data)
+      this.employees = this.dataSource.connect();
+      this.dataSource.paginator = this.paginator;
+
+      setTimeout(() => {
+        this._spinner.hide();
+      }, 900);
+    });
     
   }
 

@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "./modules/material";
+import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 
 @NgModule({
     declarations: [
@@ -12,16 +13,18 @@ import { MaterialModule } from "./modules/material";
 ],
     imports: [
       RouterModule,
-      MaterialModule
+      MaterialModule,
+      NgxSpinnerModule
     ],
     exports: [
       FormsModule,
       ReactiveFormsModule,
       HeaderComponent,
       FooterComponent,
-      MaterialModule
+      MaterialModule,
+      NgxSpinnerModule
     ],
-    providers: [],
+    providers: [NgxSpinnerService],
     entryComponents: [
     ],
 })
