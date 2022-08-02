@@ -24,6 +24,7 @@
     "@angular/router": "~10.1.3",
     "hammerjs": "^2.0.8",
     "ngx-spinner": "^10.0.0",
+    "ngx-toastr": "^11.3.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

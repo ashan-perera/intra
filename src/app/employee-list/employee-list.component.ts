@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { BackendService } from '../api/backend.service';
 import { EmployeeService } from '../api/employee.service';
@@ -33,10 +34,13 @@ export class EmployeeListComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<any>;
 
+  showTable;
+
   constructor(
     private backendService: BackendService,
     private employeeService: EmployeeService,
-    private _spinner: NgxSpinnerService
+    private _spinner: NgxSpinnerService,
+    private _toastrService: ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -54,6 +58,11 @@ export class EmployeeListComponent implements OnInit {
   listAllDepartments() {
     this.employeeService.listAllDepartments().subscribe((data: any) => {
       this.departments = data;
+    }, error => {
+      console.log("Zychnitz");
+      this._toastrService.error('Try Again Later', 'Server Error!', {
+        timeOut: 2000,
+      });
     });
   }
 
@@ -87,6 +96,7 @@ export class EmployeeListComponent implements OnInit {
 
 
     this.employeeService.searchEmployees(params).subscribe((data: any) => {
+      this.showTable = true;
       this._spinner.show();
       // if(data.object.length == 0) {
       //   this.displayNoRecords = true;
@@ -100,7 +110,11 @@ export class EmployeeListComponent implements OnInit {
 
       setTimeout(() => {
         this._spinner.hide();
-      }, 900);
+      });
+    }, error => {
+      this._toastrService.error('Try Again Later', 'Server Error!', {
+        timeOut: 2000,
+      });
     });
     
   }

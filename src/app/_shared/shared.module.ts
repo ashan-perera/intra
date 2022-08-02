@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "./modules/material";
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from "ngx-toastr";
 
 @NgModule({
     declarations: [

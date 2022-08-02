@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     RouterModule,
     SharedModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
