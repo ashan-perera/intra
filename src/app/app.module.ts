@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryComponent } from './gallery/gallery.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     SharedModule,
     HttpClientModule,
-    FlexLayoutModule,
     ToastrModule.forRoot()
   ],
   providers: [],

@@ -59,7 +59,6 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.listAllDepartments().subscribe((data: any) => {
       this.departments = data;
     }, error => {
-      console.log("Zychnitz");
       this._toastrService.error('Try Again Later', 'Server Error!', {
         timeOut: 2000,
       });
